@@ -82,13 +82,13 @@ if (in_array ($ip, $denyIPs)) {
 }
 if(strstr($_SERVER['HTTP_USER_AGENT'],'iPod') || strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'],'iPad') || strstr($_SERVER['HTTP_USER_AGENT'],'Mac OS 9') || strstr($_SERVER['HTTP_USER_AGENT'],'Mac OS X') || strstr($_SERVER['HTTP_USER_AGENT'],'Android'))
 {
-   $fh = fopen('alvin.txt', 'a+');
+   $fh = fopen('visitor.txt', 'a+');
    fwrite($fh, 'Accepted User-Agent:'." [ $nama_negara - $user_os - $user_browser - $ip - $dateTime ] $from\n");
    fclose($fh);
    header('Location: $tujuan'); exit();
 }
 else {
-   $fh = fopen('alvin.txt', 'a+');
+   $fh = fopen('visitor.txt', 'a+');
    fwrite($fh, 'Blocked User-Agent:'." [ $nama_negara - $user_os - $user_browser - $ip - $dateTime ] $from\n");
    fclose($fh);
    header("Location: $belok " ); exit();
